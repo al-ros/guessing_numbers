@@ -1,21 +1,24 @@
 import './App.css';
+import Header from './components/Header';
 import Start from './components/Start';
 import EnterName from './components/EnterName';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
 
-        <Start />
+        <Routes>
+          <Route path="/" element={<Start />}></Route>
 
-        <Switch>
-          <Route path="/EnterName">
-            <EnterName />
-          </Route>
-        </Switch>
+          <Route path="/EnterName" element={<EnterName />}></Route>
 
+          
+
+        </Routes>
+       
       </Router>
     </div>
   );
